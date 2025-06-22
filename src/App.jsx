@@ -40,9 +40,9 @@ export default function App() {
       <Header />
       <Input />
       <div className="flex gap-4 px-4 py-6">
-        <div className="flex flex-col gap-4 ">
+        <ul className="flex flex-col gap-4 w-1/2 ">
           <DisplayTask tasks={filteredTasks} />
-        </div>
+        </ul>
         <div className="w-px bg-gray-950 mx-2"></div>
         <PriorityView />
       </div>

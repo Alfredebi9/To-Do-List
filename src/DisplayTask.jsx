@@ -14,7 +14,7 @@ function DisplayTask({ tasks }) {
   }
 
   return tasks.map((task) => (
-    <div key={task.id} className="flex items-center gap-4 px-4 py-5">
+    <li key={task.id} className="flex items-center gap-4 px-4 py-5">
       <input
         type="checkbox"
         checked={task.checked}
@@ -48,7 +48,7 @@ function DisplayTask({ tasks }) {
           </span>
         </button>
       </div>
-    </div>
+    </li>
   ));
 }
 

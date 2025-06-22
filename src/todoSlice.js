@@ -12,8 +12,10 @@ const todoSlice = createSlice({
       state.todoList.push({
         taskName: action.payload.taskName,
         checked: false,
-        priority: action.payload.priority === "on" ? true : false, // Convert priority to boolean
-        id: Date.now(), // Unique ID for each task
+        // Convert the priority to boolean
+        priority: action.payload.priority === "on" ? true : false,
+        // Unique ID for each task
+        id: Date.now(),
       });
     },
     toggleTaskChecked: (state, action) => {

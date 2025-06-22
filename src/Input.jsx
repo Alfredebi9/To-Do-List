@@ -12,9 +12,9 @@ function Input() {
     e.preventDefault();
     if (text.trim() === "") return;
     //send task details to array
-    dispatch(addTask({ taskName: text, priority })); 
+    dispatch(addTask({ taskName: text, priority }));
     setText("");
-    setPriority(false); 
+    setPriority(false);
   };
   return (
     <form className="flex flex-col justify-between gap-4 px-4 py-6 shadow-md bg-stone-700">
@@ -26,14 +26,16 @@ function Input() {
         onChange={(e) => setText(e.target.value)}
       />
       <div className="flex items-center gap-4 mx-4">
-        <label className="text-white">
+        <label htmlFor="priority-checkbox" className="text-white">
           <span className="text-amber-500">Mark as priority</span>
         </label>
         <input
+          id="priority-checkbox"
           type="checkbox"
           className="w-6 px-4 py-2 bg-white rounded-lg shadow-md h-15 text-amber-700 focus:outline-none caret-amber-500"
           checked={priority}
-          onChange={(e) => setPriority(e.target.value)}
+          onChange={(e) => setPriority(e.target.checked)}
+          aria-checked={priority}
         />
         <button
           onClick={handleSubmit}
