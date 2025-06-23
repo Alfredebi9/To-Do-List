@@ -20,13 +20,15 @@ function DisplayTask({ tasks }) {
         checked={task.checked}
         onChange={() => dispatch(toggleTaskChecked(task.id))}
       />
-      <p className="capitalize">{task.taskName}</p>
+      <p className={`capitalize ${task.checked && "line-through"} `}>
+        {task.taskName}
+      </p>
       <div className="flex items-center gap-2 ml-auto">
         <button
           className="px-4 py-2 bg-stone-700 rounded-lg shadow-md hover:bg-stone-600 transition-colors duration-300 cursor-pointer"
           onClick={() => {
             const confirmDelete = window.confirm(
-              `Are you sure you want to remove this task of id: ${task.id}?`
+              `Are you sure you want to remove this task?`
             );
             if (confirmDelete) {
               dispatch(deleteTask(task.id));

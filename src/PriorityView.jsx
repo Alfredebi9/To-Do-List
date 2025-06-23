@@ -22,7 +22,9 @@ function PriorityView() {
                 checked={task.checked}
                 onChange={() => dispatch(toggleTaskChecked(task.id))}
               />
-              <p className="capitalize">{task.taskName}</p>
+              <p className={`capitalize ${task.checked && "line-through"}`}>
+                {task.taskName}
+              </p>
               <span className="text-green-500">Priority</span>
             </div>
           ) : (
